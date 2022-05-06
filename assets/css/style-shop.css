@@ -1,0 +1,83 @@
+:root {
+  --main-color: #0066ff;
+}
+
+body {
+  background-color: #f5f6f8;
+}
+
+/* nav */
+nav {
+  background: rgba(255, 255, 255);
+  opacity: 0.95;
+}
+
+nav .container-fluid .navbar-brand span {
+  color: var(--main-color);
+}
+
+nav .container-fluid .collapse ul li .nav-link:hover {
+  color: var(--main-color);
+}
+
+nav .container-fluid .collapse ul li .nav-link.active {
+  color: var(--main-color);
+}
+
+nav .container-fluid form button {
+  border-color: var(--main-color);
+  color: var(--main-color);
+  opacity: 0.8;
+  transition: 500ms ease-in-out;
+}
+
+nav .container-fluid form button:hover {
+  background-color: var(--main-color);
+  transform: scale(0.98);
+  opacity: 1;
+  color: #fff;
+}
+
+li .dropdown-item:hover {
+  color: var(--main-color);
+}
+
+/* shop */
+#semuaProduk {
+  padding-top: 60px;
+}
+
+#semuaProduk .container-fluid .card-barang {
+  cursor: pointer;
+  border: none;
+}
+
+/* footer */
+footer {
+  background-color: #fff;
+}
+
+footer .footer-logo img {
+  margin-top: -25px;
+  width: 45%;
+}
+
+footer .footer-sosmed div a {
+  color: #747474;
+  transition: 500ms ease-in-out;
+}
+
+footer .footer-sosmed div a:hover {
+  color: var(--main-color);
+  opacity: 0.8;
+}
+
+footer .layanan ul li a {
+  text-decoration: none;
+  color: #747474;
+  transition: 500ms ease-in-out;
+}
+
+footer .footer-about p {
+  color: #747474;
+}
