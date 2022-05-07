@@ -202,7 +202,7 @@ if (($_SESSION['level'] != 'administrator')) {
                             <td><?= $psnn['nama_barang']; ?></td>
                             <td><?= $psnn['jumlah_pesanan']; ?></td>
                             <td><?= $psnn['keterangan']; ?></td>
-                            <td><?= rupiah($psnn['total_pesanan']); ?></td>
+                            <td><?= rupiah($psnn['jumlah_pesanan'] * $psnn['total_pesanan']); ?></td>
                             <td>
                               <form action="" method="post">
                                 <input type="hidden" name="idPesanan" value="<?= $psnn['id_pesanan']; ?>">
