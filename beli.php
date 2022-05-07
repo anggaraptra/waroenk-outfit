@@ -128,11 +128,12 @@ if (isset($_POST["submitBeli"])) {
                         </div>
                         <div class="mb-3">
                             <label for="keterangan" class="form-label">Keterangan</label>
-                            <textarea class="form-control" id="keterangan" name="keterangan" rows="2" required></textarea>
+                            <textarea class="form-control" id="keterangan" name="keterangan" rows="2"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="totalHarga" class="form-label">Total Pesanan</label>
-                            <input type="text" value="<?= rupiah($barang["harga"]); ?>" class="form-control" id="totalHarga" name="total_pesanan" readonly>
+                            <input type="hidden" value="<?= $barang["harga"]; ?>" class="form-control" id="totalHarga" name="total_pesanan" readonly>
+                            <input type="text" value="<?= rupiah($barang['harga']); ?>" class="form-control" readonly>
                         </div>
                         <button type="submit" name="submitBeli" class="btn btn-success mt-1">Beli</button></button>
                     </div>

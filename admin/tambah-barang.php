@@ -21,8 +21,8 @@ if (isset($_POST['submitTambah'])) {
 session_start();
 
 if (($_SESSION['level'] != 'administrator')) {
-  header('Location: ../index.php');
-  exit;
+    header('Location: ../index.php');
+    exit;
 }
 
 ?>
@@ -151,7 +151,7 @@ if (($_SESSION['level'] != 'administrator')) {
                                             <tr>
                                                 <td><label for="kodeBarang">Kode Produk</label></td>
                                                 <td></td>
-                                                <td><input type="number" name="kodeBarang" id="kodeBarang" class="form-control" autocomplete="off" required></td>
+                                                <td><input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="5" name="kodeBarang" id="kodeBarang" class="form-control" autocomplete="off" required></td>
                                             </tr>
                                             <tr>
                                                 <td><label for="namaBarang">Nama Produk</label></td>

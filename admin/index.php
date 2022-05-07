@@ -117,7 +117,7 @@ if (($_SESSION['level'] != 'administrator')) {
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.php">WAROUTFIT</a>
+            <a href="../index.php">WAROUTFIT</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.php">WFIT</a>
