@@ -286,10 +286,17 @@ function loginUser($koneksi, $username, $pwd)
     if ($checkPwd === false) {
         header("location: ../login.php?error=wronglogin");
         exit();
-    } else if ($checkPwd === true) {
+    } else if ($checkPwd === true && $usernameExists["level"] === "user") {
         session_start();
         $_SESSION["username"] = $usernameExists["username"];
+        $_SESSION["level"] = $usernameExists["level"];
         header("location: ../index.php");
+        exit();
+    } else if ($checkPwd === true && $usernameExists["level"] === "administrator") {
+        session_start();
+        $_SESSION["username"] = $usernameExists["username"];
+        $_SESSION["level"] = $usernameExists["level"];
+        header("location: ../admin/index.php");
         exit();
     }
 }
