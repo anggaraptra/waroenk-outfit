@@ -76,7 +76,7 @@ function upload()
     $nama_file_baru .= '.';
     $nama_file_baru .= $ekstensi_gambar;
 
-    move_uploaded_file($tmp_name, 'assets/img-barang/' . $nama_file_baru);
+    move_uploaded_file($tmp_name, '../assets/img-barang/' . $nama_file_baru);
     return $nama_file_baru;
 }
 
@@ -110,6 +110,20 @@ function edit($data)
             ";
 
     mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
+
+// fungsi edit status pesanan
+function editStatus($data)
+{
+    global $koneksi;
+    $id = $data["idPesanan"];
+    $status = $data["statusPesanan"];
+
+    $query =  "UPDATE pesanan SET status = '$status' WHERE id_pesanan = '$id'";
+
+    mysqli_query($koneksi, $query);
+
     return mysqli_affected_rows($koneksi);
 }
 

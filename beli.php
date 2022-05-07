@@ -41,7 +41,7 @@ if (isset($_POST["submitBeli"])) {
     <link rel="stylesheet" href="assets/fontawesome-free-5.15.4-web/css/all.min.css">
     <!-- css -->
     <link rel="stylesheet" href="assets/css/style-beli.css">
-    <title>WAROUTFIT - Beli produk</title>
+    <title>Waroutfit &mdash; Beli produk</title>
 </head>
 
 <body>
@@ -68,14 +68,27 @@ if (isset($_POST["submitBeli"])) {
                         <a class="nav-link" href="shop.php">Shop</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto mb-2 text-center mb-lg-0">
-                    <li class="nav-item">
-                        <a href="signup.php" class="nav-link">Daftar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="login.php" class="nav-link">Login</a>
-                    </li>
-                </ul>
+
+                <?php
+                if (isset($_SESSION["username"])) {
+                    echo '<ul class="navbar-nav ms-auto mb-2 text-center mb-lg-0">
+                        <li class="nav-item">
+                            <a href="functions/logout.php" class="nav-link">Logout</a>
+                        </li>
+                    </ul>';
+                } else {
+                    echo '
+                        <ul class="navbar-nav ms-auto mb-2 text-center mb-lg-0">
+                            <li class="nav-item">
+                                <a href="signup.php" class="nav-link">Daftar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="login.php" class="nav-link">Login</a>
+                            </li>
+                        </ul>';
+                }
+                ?>
+
             </div>
         </div>
     </nav>
@@ -91,7 +104,7 @@ if (isset($_POST["submitBeli"])) {
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label for="nama-produk" class="form-label">Nama Produk</label>
-                            <input type="text" class="form-control" id="nama-produk" name="nama_barang" value="<?= $barang["nama_barang"]; ?>" readonly>
+                            <input type="text" class="form-control text-capitalize" id="nama-produk" name="nama_barang" value="<?= $barang["nama_barang"]; ?>" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="harga-produk" class="form-label">Harga Produk</label>
@@ -99,7 +112,7 @@ if (isset($_POST["submitBeli"])) {
                         </div>
                         <div class="mb-3 text-center">
                             <label for="" class="form-label d-flex">Gambar Produk</label>
-                            <img src="assets/img-barang/<?= $barang["gambar"]; ?>" width="200" height="200" class="img-fluid mt-3 rounded" alt="">
+                            <img src="assets/img-barang/<?= $barang["gambar"]; ?>" width="200" height="200" class="img-fluid mt-3 rounded shadow-sm" alt="">
                         </div>
                     </div>
 

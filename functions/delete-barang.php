@@ -8,11 +8,11 @@ if (
 ) {
   echo "<script>
       alert('Data berhasil dihapus!');
-      document.location.href = '../admin.php';
+      document.location.href = '../admin/semua-barang.php';
     </script>";
 } else {
   echo "<script>
       alert('Data gagal dihapus!');
-      document.location.href = '../admin.php';
+      document.location.href = '../admin/semua-barang.php';
     </script>";
 }

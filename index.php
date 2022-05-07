@@ -25,7 +25,7 @@ session_start();
     <link rel="stylesheet" href="assets/fontawesome-free-5.15.4-web/css/all.min.css">
     <!-- mycss -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>WAROUTFIT - Beranda</title>
+    <title>Waroutfit &mdash; Beranda</title>
 </head>
 
 <body>
@@ -53,7 +53,7 @@ session_start();
                     </li>
                 </ul>
                 <form method="post" action="" class="d-flex w-100">
-                    <input name="keyword" class="form-control me-2" type="search" placeholder="Cari Produk..." aria-label="Search">
+                    <input name="keyword" class="form-control me-2" type="search" placeholder="Cari Produk..." aria-label="Search" autofocus required>
                     <button name="submitCari" class="btn" type="submit"><i class="fas fa-search"></i></button>
                 </form>
 
@@ -104,7 +104,7 @@ session_start();
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-8">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExampleIndicators" class="carousel slide shadow-sm" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -132,8 +132,8 @@ session_start();
                     </div>
                 </div>
                 <div class="col-lg-4 d-none d-lg-block">
-                    <img src="assets/img/pakaian.png" class="mb-2 img-fluid rounded" alt="">
-                    <img src="assets/img/aksesoris.png" class="img-fluid rounded" alt="">
+                    <img src="assets/img/pakaian.png" class="mb-2 img-fluid rounded shadow-sm" alt="">
+                    <img src="assets/img/aksesoris.png" class="img-fluid rounded shadow-sm" alt="">
                 </div>
             </div>
         </div>
@@ -149,10 +149,10 @@ session_start();
             </div>
             <div class="row container-fluid mx-auto">
                 <?php foreach ($barang as $brng) : ?>
-                    <div class="container-fluid card card-barang mb-4" style="width: 14rem;" data-bs-toggle="tooltip" title="">
+                    <div class="container-fluid card card-barang mb-4 shadow-sm" style="width: 14rem;" data-bs-toggle="tooltip" title="">
                         <img src="assets/img-barang/<?= $brng["gambar"]; ?>" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
-                            <p class="card-title fw-bold"><?= $brng["nama_barang"]; ?></p>
+                            <p class="card-title fw-bold text-capitalize"><?= $brng["nama_barang"]; ?></p>
                             <p class="card-text"><?= rupiah($brng["harga"]); ?></p>
                             <a href="detail.php?id=<?= $brng['id_barang']; ?>" class="btn btn-primary">Detail</a>
                             <a href="beli.php?id=<?= $brng['id_barang']; ?>" class="btn btn-success">Beli</a>

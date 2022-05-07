@@ -8,6 +8,8 @@ if (isset($_POST["submitCari"])) {
     $barang = cari($_POST["keyword"]);
 }
 
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +26,7 @@ if (isset($_POST["submitCari"])) {
     <link rel="stylesheet" href="assets/fontawesome-free-5.15.4-web/css/all.min.css">
     <!-- mycss -->
     <link rel="stylesheet" href="assets/css/style-shop.css">
-    <title>WAROUTFIT - Shop</title>
+    <title>Waroutfit &mdash; Shop</title>
 </head>
 
 <body>
@@ -52,17 +54,30 @@ if (isset($_POST["submitCari"])) {
                     </li>
                 </ul>
                 <form method="post" action="" class="d-flex w-100">
-                    <input name="keyword" class="form-control me-2" type="search" placeholder="Cari Produk..." aria-label="Search">
+                    <input name="keyword" class="form-control me-2" type="search" placeholder="Cari Produk..." aria-label="Search" autofocus required>
                     <button name="submitCari" class="btn" type="submit"><i class="fas fa-search"></i></button>
                 </form>
-                <ul class="navbar-nav ms-auto mb-2 text-center mb-lg-0">
-                    <li class="nav-item">
-                        <a href="signup.php" class="nav-link">Daftar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="login.php" class="nav-link">Login</a>
-                    </li>
-                </ul>
+
+                <?php
+                if (isset($_SESSION["username"])) {
+                    echo '<ul class="navbar-nav ms-auto mb-2 text-center mb-lg-0">
+                        <li class="nav-item">
+                            <a href="functions/logout.php" class="nav-link">Logout</a>
+                        </li>
+                    </ul>';
+                } else {
+                    echo '
+                        <ul class="navbar-nav ms-auto mb-2 text-center mb-lg-0">
+                            <li class="nav-item">
+                                <a href="signup.php" class="nav-link">Daftar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="login.php" class="nav-link">Login</a>
+                            </li>
+                        </ul>';
+                }
+                ?>
+
             </div>
         </div>
     </nav>
@@ -77,10 +92,10 @@ if (isset($_POST["submitCari"])) {
             </div>
             <div class="row container-fluid mx-auto">
                 <?php foreach ($barang as $brng) : ?>
-                    <div class="container-fluid card card-barang mb-4" style="width: 14rem;" data-bs-toggle="tooltip" title="">
+                    <div class="container-fluid card card-barang mb-4 shadow-sm" style="width: 14rem;" data-bs-toggle="tooltip" title="">
                         <img src="assets/img-barang/<?= $brng['gambar'] ?>" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
-                            <p class="card-title fw-bold"><?= $brng['nama_barang'] ?></p>
+                            <p class="card-title fw-bold text-capitalize"><?= $brng['nama_barang'] ?></p>
                             <p class="card-text"><?= $brng['harga'] ?></p>
                             <a href="detail.php?id=<?= $brng['id_barang']; ?>" class="btn btn-primary">Detail</a>
                             <a href="beli.php?id=<?= $brng['id_barang']; ?>" class="btn btn-success">Beli</a>

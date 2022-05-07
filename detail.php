@@ -21,7 +21,7 @@ $barang = query("SELECT * FROM barang WHERE id_barang = $id")[0];
     <link rel="stylesheet" href="assets/fontawesome-free-5.15.4-web/css/all.min.css">
     <!-- css -->
     <link rel="stylesheet" href="assets/css/style-detail.css">
-    <title>WAROUTFIT - Detail produk</title>
+    <title>Waroutfit &mdash; Detail produk</title>
 </head>
 
 <body>
@@ -72,7 +72,7 @@ $barang = query("SELECT * FROM barang WHERE id_barang = $id")[0];
                 <div class="col-md-2"></div>
                 <!-- Gambar Produk -->
                 <div class="col-md-4 mb-3">
-                    <img src="assets/img-barang/<?= $barang["gambar"]; ?>" width="200" height="200" class="img-fluid rounded" alt="">
+                    <img src="assets/img-barang/<?= $barang["gambar"]; ?>" width="200" height="200" class="img-fluid rounded shadow-sm" alt="">
                 </div>
                 <!-- Keterangan Produk -->
                 <div class="col-md-4 mt-1">
@@ -83,11 +83,11 @@ $barang = query("SELECT * FROM barang WHERE id_barang = $id")[0];
                         </tr>
                         <tr>
                             <th>Nama Produk</th>
-                            <td><?= $barang["nama_barang"]; ?></td>
+                            <td class="text-capitalize"><?= $barang["nama_barang"]; ?></td>
                         </tr>
-                        <tr class="kategori">
+                        <tr>
                             <th>Kategori</th>
-                            <td><?= $barang["kategori"]; ?></td>
+                            <td class="text-capitalize"><?= $barang["kategori"]; ?></td>
                         </tr>
                         <tr>
                             <th>Stok</th>

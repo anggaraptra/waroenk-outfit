@@ -43,10 +43,6 @@ li .dropdown-item:hover {
   padding-top: 60px;
 }
 
-#detail .kategori td {
-  text-transform: capitalize;
-}
-
 /* footer */
 footer {
   background-color: #fff;

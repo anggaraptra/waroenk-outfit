@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
-    <title>Hello, Code!</title>
+    <title>Hello, Outfit!</title>
     <link rel="stylesheet" href="assets/css/style-signup.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
 </head>
