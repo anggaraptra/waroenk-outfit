@@ -20,7 +20,16 @@ if (isset($_POST['submitEdit'])) {
     }
 }
 
+
+session_start();
+
+if (($_SESSION['level'] != 'administrator')) {
+  header('Location: ../index.php');
+  exit;
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,10 +105,10 @@ if (isset($_POST['submitEdit'])) {
                     </li>
                     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">Hi, </div>
+                            <div class="d-sm-none d-lg-inline-block">Hi, <?= $_SESSION['username'] ?> </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="#" class="dropdown-item has-icon text-danger">
+                            <a href="../functions/logout.php" class="dropdown-item has-icon text-danger">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
                         </div>
@@ -197,11 +206,6 @@ if (isset($_POST['submitEdit'])) {
                     </div>
                 </section>
             </div>
-            <footer class="main-footer">
-                <div class="footer-left">
-                    Copyright &copy; <div class="bullet"></div><a href="../index.php">WAROUTFIT</a>
-                </div>
-            </footer>
         </div>
     </div>
 
