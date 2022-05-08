@@ -178,7 +178,7 @@ if (($_SESSION['level'] != 'administrator')) {
                                                             <ul class="list-unstyled">
                                                                 <li>Kategori : <?= $aks['kategori']; ?></li>
                                                                 <li>Stok : <?= $aks['stok']; ?></li>
-                                                                <li>Harga : <?= $aks['harga']; ?></li>
+                                                                <li>Harga : <?= rupiah($aks['harga']); ?></li>
                                                             </ul>
                                                             <a href="edit-barang.php?id=<?= $aks['id_barang']; ?>" class="btn btn-secondary">Edit</a>
                                                             <a href="../functions/delete-barang.php?id=<?= $aks['id_barang']; ?>" class="btn btn-danger" onclick="return confirm('Yakin?')">Hapus</a>

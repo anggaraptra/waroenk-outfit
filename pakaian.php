@@ -96,7 +96,7 @@ session_start();
                         <img src="assets/img-barang/<?= $brng['gambar'] ?>" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
                             <p class="card-title fw-bold text-capitalize"><?= $brng['nama_barang'] ?></p>
-                            <p class="card-text"><?= $brng['harga'] ?></p>
+                            <p class="card-text"><?= rupiah($brng['harga']) ?></p>
                             <a href="detail.php?id=<?= $brng['id_barang']; ?>" class="btn btn-primary">Detail</a>
                             <a href="beli.php?id=<?= $brng['id_barang']; ?>" class="btn btn-success">Beli</a>
                         </div>
