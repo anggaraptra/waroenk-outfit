@@ -6,6 +6,8 @@ $barang = query("SELECT * FROM barang ORDER BY id_barang DESC LIMIT 5");
 
 $pesanan = query("SELECT * FROM pesanan WHERE status = 'proses' ORDER BY id_pesanan DESC LIMIT 10");
 
+$supplier = query("SELECT * FROM supplier ORDER BY id_supplier DESC");
+
 if (isset($_POST['submitEditStatus'])) {
   if (editStatus($_POST) > 0) {
     echo "<script>
@@ -215,6 +217,39 @@ if (($_SESSION['level'] != 'administrator')) {
                             </td>
                             <td><button type="submit" name="submitEditStatus" class="btn btn-primary">Edit Status</button></td>
                             </form>
+                          </tr>
+                        <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header shadow-sm">
+                  <h4>Tabel Supplier</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover my-0">
+                      <thead>
+                        <tr>
+                          <th>Nama</th>
+                          <th>Menyuplai</th>
+                          <th>No Handphone</th>
+                          <th>Alamat</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php foreach ($supplier as $splr) : ?>
+                          <tr>
+                            <td><?= $splr['nama']; ?></td>
+                            <td class="text-capitalize"><?= $splr['menyuplai']; ?></td>
+                            <td><?= $splr['no_hp']; ?></td>
+                            <td><?= $splr['alamat']; ?></td>
                           </tr>
                         <?php endforeach; ?>
                       </tbody>
