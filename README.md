@@ -11,4 +11,4 @@ list anggota :
 - Nauval [25]
 - Sheilla [33]
 
-copyright © 2022, Developed by Circle Gweh
+copyright © 2022 Waroenk Outfit
